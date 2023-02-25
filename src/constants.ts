@@ -1,0 +1,3 @@
+export const SEPARATOR = ":";
+
+export const DEFAULT_INPUT_VALUE = `00${SEPARATOR}00${SEPARATOR}00`
