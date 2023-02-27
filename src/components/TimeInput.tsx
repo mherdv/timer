@@ -1,9 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { SEPARATOR, DEFAULT_INPUT_VALUE } from "../constants";
 
-const TimeInput: React.FC<{
+interface ITimeInputProps {
   valueRef: React.MutableRefObject<string | null>;
-}> = ({ valueRef }) => {
+}
+
+const TimeInput: React.FC<ITimeInputProps> = ({ valueRef }) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const lastPressedKeyRef = useRef<string | null>(null);
   const handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (event) =>
