@@ -1,4 +1,4 @@
-import { useTimerState } from "../../contexts/TimerContext";
+import { useTimerState } from "../../contexts/TimerContext/TimerContext";
 import { getPercentPassed } from "../../utils";
 import classNames from "./timeIndicator.module.css";
 

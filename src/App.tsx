@@ -1,4 +1,4 @@
-import { useTimerState } from "./contexts/TimerContext";
+import { useTimerState } from "./contexts/TimerContext/TimerContext";
 import classNames from "./app.module.css";
 import TimeInput from "./components/TimeInput";
 import { useRef } from "react";
@@ -13,7 +13,6 @@ const App = () => {
   const inputValueRef = useRef(null);
 
   const isStarted = state.status === "started";
-  const isPaused = state.status === "paused";
   const isFinished = state.status === "finished";
   const isIdle = state.status === "idle";
 

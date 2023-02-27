@@ -5,15 +5,17 @@ import React, {
   useMemo,
   useReducer,
 } from "react";
-import { DEFAULT_INPUT_VALUE } from "../constants";
-import { getActions, initialState, reducer } from "../reducer";
-import { ITimerState } from "../types";
-import { decreaseTimerBySecond } from "../utils";
+import { DEFAULT_INPUT_VALUE } from "../../constants";
+import { getActions, initialState, reducer } from "./reducer";
+import { ITimerState } from "../../types";
+import { decreaseTimerBySecond } from "../../utils";
 
-export const CounterContext = createContext<{
+interface IContextValue {
   state: ITimerState;
   actions: ReturnType<typeof getActions>;
-}>({
+}
+
+export const CounterContext = createContext<IContextValue>({
   state: initialState,
   actions: {} as ReturnType<typeof getActions>,
 });
@@ -22,15 +24,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export const CounterContextProvider: React.FC<Props> = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  const actions = useMemo(() => {
-    return getActions(dispatch);
-  }, [dispatch]);
-
-  const value = useMemo(() => ({ state, actions }), [state, actions]);
-
+const useTimerDecrees = ({ state, actions }: IContextValue) => {
   useEffect(() => {
     let timerId: ReturnType<typeof setTimeout> | undefined;
 
@@ -53,7 +47,17 @@ export const CounterContextProvider: React.FC<Props> = ({ children }) => {
       };
     }
   }, [state]);
+};
+export const CounterContextProvider: React.FC<Props> = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
+  const actions = useMemo(() => {
+    return getActions(dispatch);
+  }, [dispatch]);
+
+  const value = useMemo(() => ({ state, actions }), [state, actions]);
+
+  useTimerDecrees(value);
   return (
     <CounterContext.Provider value={value}>{children}</CounterContext.Provider>
   );

@@ -1,4 +1,4 @@
-import { EActionTypes, ITimerState } from "./types";
+import { EActionTypes, ITimerState } from "../../types";
 
 export const initialState: ITimerState = {
     status: "idle",
@@ -6,7 +6,7 @@ export const initialState: ITimerState = {
     firstSetTime: null,
 };
 
-interface IAction {
+export interface IAction {
     type: EActionTypes;
     payload?: { time: ITimerState['time'] }
 }
