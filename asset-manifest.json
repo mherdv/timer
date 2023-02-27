@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.032172cc.css",
-    "main.js": "/static/js/main.d1702f50.js",
-    "static/media/pause-button.svg": "/static/media/pause-button.6ea95a1298b92da425e3c13027efdeb7.svg",
-    "index.html": "/index.html",
-    "static/media/play-circle.svg": "/static/media/play-circle.da98ad4a87d6cf23ca15aa5d3c369802.svg",
-    "static/media/stop-button.svg": "/static/media/stop-button.a85e9da3d6a72048999e819186d3b780.svg",
-    "main.032172cc.css.map": "/static/css/main.032172cc.css.map",
-    "main.d1702f50.js.map": "/static/js/main.d1702f50.js.map"
+    "main.css": "/timer/static/css/main.032172cc.css",
+    "main.js": "/timer/static/js/main.74780ebb.js",
+    "index.html": "/timer/index.html",
+    "static/media/pause-button.svg": "/timer/static/media/pause-button.6ea95a1298b92da425e3c13027efdeb7.svg",
+    "static/media/play-circle.svg": "/timer/static/media/play-circle.da98ad4a87d6cf23ca15aa5d3c369802.svg",
+    "static/media/stop-button.svg": "/timer/static/media/stop-button.a85e9da3d6a72048999e819186d3b780.svg",
+    "main.032172cc.css.map": "/timer/static/css/main.032172cc.css.map",
+    "main.74780ebb.js.map": "/timer/static/js/main.74780ebb.js.map"
   },
   "entrypoints": [
     "static/css/main.032172cc.css",
-    "static/js/main.d1702f50.js"
+    "static/js/main.74780ebb.js"
   ]
 }
